@@ -1,5 +1,5 @@
 # whatstheweatherlike
-Links:  https://bpaige91.github.io/whatstheweatherlsike/
+Links:  https://bpaige91.github.io/whatstheweatherlike/
 
  https://bpaige91.github.io/whatstheweatherlike/
 ## Description
