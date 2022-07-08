@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Dashboard</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Didact+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+</head> 
+
+<body> 
+    <nav class="navbar navbar-expand">
+        <div class="navbar-brand">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <p class="title">Weather Dashboard</p>
+                </div>
+                <!-- // Keep in order to have currentCall function work properly-->
+                <!-- <div class="row"> -->
+                    <div class="col" id="searchBox">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search by City or Zip Code">
+                    </div>
+                    <div class="col" id="searchButton">
+                        <a href="#" class="btn btn-md">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                <!-- </div> -->
+                <!-- $(this).parent("div").children("div").children("input").val(); -->
+            </div>
+        </div>
+    </nav>
+    <!-- saved cities buttons -->
+     <nav class="navbar nav2 d-flex flex-row-reverse">
+         
+             <form class="form-inline saved-cities d-flex flex-row-reverse">
+                 <h6 id="refresh" >Refresh to view saved cities.</h6>
+                 <ul class="list-group d-flex flex-row-reverse"></ul>
+             </form>
+     </nav>
+ 
+     <div class="container container-fluid">
+         <div class="jumbotron jumbotron-fluid shadow">
+             <div class="row">
+             <div class="col-8">
+                 <h1 class="city"> Search by city or zip code above to see the current weather. </h1>
+                     <h2 id="todayIs" class=""></h2>
+                     <h3 class="temp"></h3>
+                     <h3 class="humidity"></h3>
+                     <h3 class="windSpeed"></h3>
+                     <h3 class="uvIndex"></h3>
+             </div>
+             <div class="col-4">
+                 <br>
+                 <h5 id="weather"></h5>
+                 <br><br>
+                 <img class="icon-main" id="icon"></img>
+             </div>
+             </div>
+         </div>
+         
+         <div class="jumbotron jumbotron-fluid shadow"></div>
+         <h1>5 Day Forecast</h1>
+         <div class="forecast">
+            <div class="card shadow">
+                <div class="col-lg-2 col-md-6">
+                    <div class="card-body">
+                        <h5 id="Day-1"></h5>
+                        <h5 id="day-Two"></h5>
+                        <h6 class="card-subtitle mb-2" id="temp-3"></h6>
+                        <h6 class="card-text" id="humid-3"></h6>
+                        <hr>
+                        <img class="icon" id="icon-3"></img>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <div class="card shadow" >
+                    <div class="card-body">
+                        <h5 id="day-2"></h5>
+                        <h6 class="card-subtitle mb-2" id="temp-11"></h6>
+                        <h6 class="card-text" id="humid-11"></h6>
+                        <h5 id="weather-11"></h5>
+                        <hr>
+                        <img class="icon" id="icon-11"></img>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <div class="card shadow" >
+                    <div class="card-body">
+                        <h5 id="day-3"></h5>
+                        <h6 class="card-subtitle mb-2" id="temp-19"></h6>
+                        <h6 class="card-text" id="humid-19"></h6>
+                        <h5 id="weather-19"></h5>
+                        <hr>
+                        <img class="icon" id="icon-19"></img>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <div class="card shadow" >
+                    <div class="card-body">
+                        <h5 id="day-4"></h5>
+                        <h6 class="card-subtitle mb-2" id="temp-27"></h6>
+                        <h6 class="card-text" id="humid-27"></h6>
+                        <h5 id="weather-27"></h5>
+                        <hr>
+                        <img class="icon" id="icon-27"></img>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 id="day-5"></h5>
+                        <h6 class="card-subtitle m-2" id="temp-35"></h6>
+                        <h6 class="card-text" id="humid-35"></h6>
+                        <h5 id="weather-35"></h5>
+                        <hr>
+                        <img class="icon" id="icon-35"></img>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="assets/script.js"></script>
+</body>
+
+</html>
